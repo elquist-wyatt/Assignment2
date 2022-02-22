@@ -5,10 +5,26 @@
 //  Created by Wyatt Elquist on 2/21/22.
 //
 
+#include "StatsCalculator.hpp"
+#include "FileGenerator.hpp"
 #include <iostream>
+#include <fstream>
+#include <vector>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+
+int main() {
+    
+    FileGenerator afile;
+    
+    afile.generateRandomNumberFile("output.txt", 1000);
+    
+    StatsCalculator calc;
+    
+    calc.createArray("output.txt");
+    
+    calc.printStatistics();
+    
     return 0;
 }
